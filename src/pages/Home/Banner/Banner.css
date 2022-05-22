@@ -21,3 +21,28 @@
     font-size: 25px;
     line-height: 40px;
 }
+.banner-btn{
+    display: flex;
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 468px) {
+    .img-overlay h1{
+        font-size: 28px;
+        line-height: 40px;
+        font-family: sans-serif;
+        margin-top: 150px;
+        overflow-x: hidden;
+        text-align: center;
+    }
+    .img-overlay h4{
+        margin-top:40px;
+        font-size: 18px;
+        text-align: center;
+        overflow-x: hidden;
+    }
+    .banner-btn{
+        margin-top: 40px;
+        justify-content: center;
+    }
+}

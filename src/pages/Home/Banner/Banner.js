@@ -21,7 +21,7 @@ const Banner = () => {
                                 the world’s best leather goods.
                             </span>
                         </h4>
-                        <div className='d-flex mt-5'>
+                        <div className='banner-btn'>
                             <span className='me-5'><Button>In Details</Button></span>
                             <Button >Contact Us</Button>
                         </div>
