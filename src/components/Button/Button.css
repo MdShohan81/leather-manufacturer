@@ -1,0 +1,13 @@
+.primary-btn{
+    background-color: #EF185A;
+    color: white;
+    font-size: 18px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 50px;
+}
+.primary-btn:hover{
+    background-color: #ff004c;
+    transform: scale(1.1);
+    transition: 0.3s;
+}

@@ -1,0 +1,23 @@
+.bg-img{
+    background: url('../../../assets/img/banner.jpg');
+    background-position: center;
+    background-size: cover;
+    min-height: 90px;
+}
+.img-overlay{
+    background: rgba(0, 0, 0,.7);
+    background-position: center;
+    background-size: cover;
+    min-height: 90vh;
+    
+}
+.img-overlay h1{
+    font-size: 50px;
+    font-family: sans-serif;
+    margin-top: 100px;
+}
+.img-overlay h4{
+    margin-top: 30px;
+    font-size: 25px;
+    line-height: 40px;
+}
