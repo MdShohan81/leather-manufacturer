@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Button from '../../components/Button/Button';
 import './ProductDetail.css'
 
 const ProductDetail = () => {
@@ -33,14 +34,21 @@ const ProductDetail = () => {
                     <img src={product.picture} alt="img" className='details-img rounded'/>
                 </div>
                 <div className="col-md-6 card info-container">
+                    <p className='ms-4 mt-5'>id: {product._id}</p>
                     <h3>{product.name}</h3>
-                    <h4>£{product.price}</h4>
-                    <p className='ms-4'>{product.description}</p>
-                    <div className='ms-4 input-group'>
+                    <h4>$ {product.price}</h4>
+                    <div className='ms-4'>
+                     <span className='fs-5 text-danger'>Description: </span>   
+                        <p>{product.description}</p>
+                    </div>
+                    <div className='ps-3 input-group'>
                         <button onClick={decreaseQuantity} className='input-group-text btn btn-danger'>-</button>
                         <input  value={quantity} type="number" readOnly/>
                         <button onClick={increaseQuantity} className='input-group-text btn btn-danger'>+</button>
-                    </div>{" "}
+                    </div>
+                    <div className='mt-3'>
+                        <button className='btn'><Button>Proceed CheckOut</Button> </button>
+                    </div>
                 </div>
             </div>
         </div>
