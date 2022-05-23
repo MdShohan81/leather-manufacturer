@@ -1,0 +1,29 @@
+.details-img{
+    width: 500px;
+    height: auto;
+}
+
+
+.info-container h3{
+    color: #FF004C;
+    font-size: 35px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.info-container h4{
+    padding-top: 20px;
+    padding-left: 20px; 
+}
+input{
+    width: 50px;
+    border: 1px solid gray;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 468px) {
+    .details-img{
+        width: 95%; 
+        margin-left: 10px; 
+    }
+}
