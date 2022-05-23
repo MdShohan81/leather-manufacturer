@@ -31,7 +31,7 @@ const Social = () => {
                 </div>
                 {errorMessages}
                 <div className="col-md-12 col-12 text-center mx-auto">
-                    <button onClick={() => signInWithGoogle()} className='btn btn-danger text-light py-2 fs-5 w-75'>LogIn With Google</button>
+                    <button onClick={() => signInWithGoogle()} className='btn btn-outline-danger shadow-lg py-2 fs-5 w-75'>LogIn With Google</button>
                 </div>
             </div>
         </div>
