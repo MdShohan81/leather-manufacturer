@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Summery = () => {
+const Blogs = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Summery = () => {
     );
 };
 
-export default Summery;
+export default Blogs;

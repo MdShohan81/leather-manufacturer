@@ -22,7 +22,7 @@ const Banner = () => {
                             </span>
                         </h4>
                         <div className='banner-btn'>
-                            <span className='me-5'><Button>In Details</Button></span>
+                            <span className='me-5'><Button>In Details </Button></span>
                             <Button >Contact Us</Button>
                         </div>
                     </div>
