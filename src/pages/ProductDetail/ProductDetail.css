@@ -1,13 +1,13 @@
 .details-img{
     width: 500px;
-    height: auto;
+    height: 0 auto;
 }
 
 
 .info-container h3{
     color: #FF004C;
     font-size: 35px;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-left: 20px;
 }
 .info-container h4{

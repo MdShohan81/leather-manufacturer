@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import './Register.css';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Social from '../Social/Social';
 import { toast, ToastContainer } from 'react-toastify';
@@ -22,29 +22,33 @@ const Register = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
 
+      const  [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const loginRegister = event =>{
         navigate('login');
     }
 
     let errorMessages;
-    if(error){
+    if(error || updateError){
         errorMessages = <div>
                             <p className='text-danger'>{'Please put right way'}</p>
                         </div>
     }
-    if(loading){
+    if(loading || updating){
         return <Loading></Loading>
     }
     if(user){
-        navigate('/')
+        console.log(user)
     }
     //get user sign value and submit
-    const registerHandleSubmit = event => {
+    const registerHandleSubmit = async event => {
         event.preventDefault();
         const name = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        createUserWithEmailAndPassword( email, password);
+        await createUserWithEmailAndPassword( email, password);
+        await updateProfile({ displayName: name });
+        console.log('update done');
+        navigate('/');
         event.target.reset();
         toast('send verify email')
 

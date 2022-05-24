@@ -28,7 +28,7 @@ const Header = () => {
       {
         user ? 
           <>
-          <p className='text-light'><Nav.Link as={Link}  to="/signout" onClick={handleSignOut}>Sign out</Nav.Link></p>
+          <Nav.Link as={Link}  to="/signout" onClick={handleSignOut}>Sign out</Nav.Link>
           </>
         :
         <Nav.Link as={Link} to='/login'>Login</Nav.Link>
