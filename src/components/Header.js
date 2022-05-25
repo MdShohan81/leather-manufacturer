@@ -16,19 +16,20 @@ const Header = () => {
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
-  <Navbar.Brand as={Link} to='/'> <img src={logo} alt="img" className='text-white' style={{width: "60px", height: "50px"}}/> MFCT</Navbar.Brand>
+  <Navbar.Brand as={Link} to='/' className='d-flex align-center justify-center'> <img src={logo} alt="img" className='text-white' style={{width: "60px", height: "50px"}}/></Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
-      
       <Nav.Link as={Link} to="/">Home</Nav.Link>
-  
     </Nav>
     <Nav>
       {
+        user && <Nav.Link as={Link}  to="/dashboard">Dashboard</Nav.Link>
+      }
+      {
         user ? 
           <>
-          <Nav.Link as={Link}  to="/orders">My Order</Nav.Link>
+          
           <Nav.Link as={Link}  to="/signout" onClick={handleSignOut}>Sign Out</Nav.Link>
           </>
         :

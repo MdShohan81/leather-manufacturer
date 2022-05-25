@@ -7,6 +7,7 @@ import auth from '../../../firebase.init';
 import Social from '../Social/Social';
 import { toast, ToastContainer } from 'react-toastify';
 import Loading from '../../Loading/Loading';
+import useToken from '../../../hooks/useToken';
 
 const Register = () => {
     const nameRef = useRef('');
@@ -23,6 +24,8 @@ const Register = () => {
       ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
 
       const  [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+      const [token] = useToken(user)
     const loginRegister = event =>{
         navigate('login');
     }
@@ -36,8 +39,9 @@ const Register = () => {
     if(loading || updating){
         return <Loading></Loading>
     }
-    if(user){
+    if(token){
         console.log(user)
+        navigate('/');
     }
     //get user sign value and submit
     const registerHandleSubmit = async event => {
@@ -48,7 +52,7 @@ const Register = () => {
         await createUserWithEmailAndPassword( email, password);
         await updateProfile({ displayName: name });
         console.log('update done');
-        navigate('/');
+        
         event.target.reset();
         toast('send verify email')
 

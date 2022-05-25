@@ -2,10 +2,12 @@ import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import useToken from '../../../hooks/useToken';
 import Loading from '../../Loading/Loading';
 
 const Social = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [token] = useToken(user)
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || '/';
@@ -15,7 +17,7 @@ const Social = () => {
             <p className='text-danger'>{'something gone wrong'}</p>
         </div>
     }
-    if(user){
+    if(token){
         navigate(from, { replace: true });
     }
     if(loading){
@@ -31,7 +33,7 @@ const Social = () => {
                 </div>
                 {errorMessages}
                 <div className="col-md-12 col-12 text-center mx-auto">
-                    <button onClick={() => signInWithGoogle()} className='btn btn-outline-danger shadow-lg py-2 fs-5 w-75'>LogIn With Google</button>
+                    <button onClick={() => signInWithGoogle()} className='btn btn-outline-danger shadow-lg py-2 fs-5 w-75'>LogIn/Register With Google</button>
                 </div>
             </div>
         </div>
