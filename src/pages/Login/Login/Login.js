@@ -8,6 +8,7 @@ import Loading from '../../Loading/Loading';
 import Social from '../Social/Social';
 import axios from 'axios';
 import './Login.css'
+import useToken from '../../../hooks/useToken';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -22,6 +23,7 @@ const Login = () => {
         error,
       ] = useSignInWithEmailAndPassword(auth);
       const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+      const token = useToken(user)
 
       const navigateRegister = event => {
         navigate('/register')
@@ -35,18 +37,16 @@ const Login = () => {
     if(loading || sending){
         return <Loading></Loading>
     }
-    if (user){
-        // navigate(from, { replace: true });
+    if (token){
+        navigate(from, { replace: true });
     }
 
-    const loginHandleSubmit = async event => {
+    const loginHandleSubmit = event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        await signInWithEmailAndPassword(email, password);
-        const {data} = await axios.post('http://localhost:5000/login', {email});
-       localStorage.setItem('accessToken', data.accessToken);
-       navigate(from, { replace: true });
+        signInWithEmailAndPassword(email, password);
+        
     }
 
     const resetPassword = async() => {

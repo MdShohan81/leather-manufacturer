@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Button from '../../components/Button/Button';
@@ -12,28 +11,52 @@ const Order = () => {
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
     
-    useEffect( () => {
-        const getOrders = async() => {
-            const url = `http://localhost:5000/order?email=${user.email}`;
-            try{
-                const {data} = await axios.get(url, {
-                    headers: {
-                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                    }
-                });
-                setOrders(data);
-            }catch(error){
-                console.log(error.message);
-                if(error.response.status === 401 || error.response.status === 403){
-                    signOut();
-                    navigate('/login');
+
+
+    useEffect(() => {
+        if(user){
+            fetch(`http://localhost:5000/order?email=${user.email}`,{
+                method: 'GET',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 }
+            })
+        .then(res => {
+            if(res.status === 401 || res.status === 403){
+                signOut(auth);
+                localStorage.removeItem('accessToken');
+                navigate('/');
             }
+            return res.json()
+        })
+        .then(data => setOrders(data));
+        }
+    }, [user])
+
+
+
+    // useEffect( () => {
+    //     const getOrders = async() => {
+    //         const url = `http://localhost:5000/order?email=${user.email}`;
+    //         try{
+    //             const {data} = await axios.get(url, {
+    //                 headers: {
+    //                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
+    //                 }
+    //             });
+    //             setOrders(data);
+    //         }catch(error){
+    //             console.log(error.message);
+    //             if(error.response.status === 401 || error.response.status === 403){
+    //                 signOut();
+    //                 navigate('/login');
+    //             }
+    //         }
             
-            }
-            getOrders();
+    //         }
+    //         getOrders();
             
-    }, [user]);
+    // }, [user]);
     const handleDelete = id => {
         const proceed = window.confirm('are u sure do u want to delete');
         if(proceed){
@@ -65,7 +88,7 @@ const Order = () => {
     </thead>
     <tbody>
      {
-         orders.map((order, index) => <tr>
+         orders.map((order, index) => <tr key={order.id}>
             <th>{index + 1}</th>
             <td>{order.name}</td>
             <td>{order.quantity}</td>

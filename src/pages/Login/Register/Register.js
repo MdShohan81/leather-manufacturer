@@ -40,7 +40,6 @@ const Register = () => {
         return <Loading></Loading>
     }
     if(token){
-        console.log(user)
         navigate('/');
     }
     //get user sign value and submit
@@ -52,8 +51,8 @@ const Register = () => {
         await createUserWithEmailAndPassword( email, password);
         await updateProfile({ displayName: name });
         console.log('update done');
-        
         event.target.reset();
+        navigate('/');
         toast('send verify email')
 
     }

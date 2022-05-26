@@ -54,7 +54,7 @@ const ProductDetail = () => {
         .then(data => {
             console.log(data);
             toast('your order placed successfully');
-            
+            event.target.reset();
             
         })
         

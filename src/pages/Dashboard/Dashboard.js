@@ -16,6 +16,7 @@ const Dashboard = () => {
       
       <li><Link className='text-decoration-none' to='/dashboard'>My Order</Link></li>
       <li><Link className='text-decoration-none' to='/dashboard/review'>My Review</Link></li>
+      <li><Link className='text-decoration-none' to='/dashboard/profile'>My Profile</Link></li>
     </ul>
   
   </div>
