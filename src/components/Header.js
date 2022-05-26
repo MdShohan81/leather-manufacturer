@@ -21,10 +21,14 @@ const Header = () => {
   <Navbar.Brand as={Link} to='/' className='d-flex align-center justify-center'> <img src={logo} alt="img" className='text-white' style={{width: "60px", height: "50px"}}/></Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="me-auto">
+    <nav className='me-auto'>
+    <label tabindex="0" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+      </label>
+      
+    </nav>
+    <Nav className="ms-auto">
       <Nav.Link as={Link} to="/">Home</Nav.Link>
-    </Nav>
-    <Nav>
       {
         user && <Nav.Link as={Link}  to="/dashboard">Dashboard</Nav.Link>
       }
