@@ -5,8 +5,9 @@ import Button from '../../components/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import './Order.css';
+import { toast } from 'react-toastify';
 
-const Order = () => {
+const Order = ({_id}) => {
     const [orders, setOrders] = useState([]);
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
@@ -41,13 +42,18 @@ const Order = () => {
         if(proceed){
             const url = `http://localhost:5000/order/${id}`
             fetch(url, {
-                method: 'DELETE'
+                method: 'DELETE',
             })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                if(data){
+                    console.log(data);
                 const remaining = orders.filter(order => order._id !== id);
-                setOrders(remaining)
+                setOrders(remaining);
+                toast.success('order cancel successfull');
+
+                }
             })
             
         }
@@ -72,6 +78,7 @@ const Order = () => {
             <td>{order.name}</td>
             <td>{order.quantity}</td>
             <td>{order.email}</td>
+            <td><button onClick={() => handleDelete(order._id)}><Button>Cancel</Button></button></td>
           </tr>)
      }
       

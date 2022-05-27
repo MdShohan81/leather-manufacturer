@@ -38,6 +38,7 @@ const ProductDetail = () => {
         const order = {
             name: user.displayName,
             email: user.email,
+            price: product.price,
             productId: productId,
             quantity: event.target.quantity.value,
             address: event.target.address.value,
@@ -93,7 +94,7 @@ const ProductDetail = () => {
                     <Form.Control className='text-start' name='phone' type="text" placeholder="Phone number" required/>
                     </div>
                     <div className='mt-2'>
-                        <button className='btn' type='submit'><Button>Place order</Button> </button>
+                        <button  type='submit'><Button>Place order</Button> </button>
                     </div>
                    </form>
                 </div>
