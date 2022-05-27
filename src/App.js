@@ -17,6 +17,7 @@ import User from './pages/User/User';
 import AddProduct from './pages/AddProduct/AddProduct';
 import NotFound from './pages/NotFound/NotFound';
 import Blog from './pages/Blog/Blog';
+import Payment from './pages/Payment/Payment';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           }>
           <Route index element={<Profile></Profile>}></Route>
           <Route path='order' element={<Order></Order>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='review' element={<MyReview></MyReview>}></Route>
           <Route path='user' element={<RequireAdmin><User></User></RequireAdmin>}></Route>
           <Route path='addproduct' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>

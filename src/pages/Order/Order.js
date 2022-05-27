@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Button from '../../components/Button/Button';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import './Order.css';
 import { toast } from 'react-toastify';
@@ -68,7 +68,9 @@ const Order = ({_id}) => {
         <th>SL</th>
         <th>Name</th>
         <th>quantity</th>
-        <th>emial</th>
+        <th>email</th>
+        <th>Cancel</th>
+        <th>Payment</th>
       </tr>
     </thead>
     <tbody>
@@ -79,6 +81,10 @@ const Order = ({_id}) => {
             <td>{order.quantity}</td>
             <td>{order.email}</td>
             <td><button onClick={() => handleDelete(order._id)}><Button>Cancel</Button></button></td>
+            <td>
+                {(order.price && !order.piad) && <Link to={`/dashboard/payment/${order._id}`}><Button>pay</Button></Link>}
+                {(order.price && order.piad) && <span className='text-green-500'>paid</span>}
+            </td>
           </tr>)
      }
       
