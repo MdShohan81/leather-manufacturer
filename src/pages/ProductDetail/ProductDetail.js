@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import './ProductDetail.css'
+import './ProductDetail.module.css'
 import { toast } from 'react-toastify';
 
 const ProductDetail = () => {
@@ -75,7 +75,7 @@ const ProductDetail = () => {
                     </div>
                     
                    <form onSubmit={handlePlaceOrder}>
-                   <div className='ps-3 input-group'>
+                   <div className='ps-3 input-group qty'>
                         <span onClick={decreaseQuantity} className='input-group-text btn btn-danger'>-</span>
                         <input  value={quantity} name='quantity' type="number" readOnly/>
                         <span onClick={increaseQuantity} className='input-group-text btn btn-danger'>+</span>

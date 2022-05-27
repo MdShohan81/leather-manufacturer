@@ -35,28 +35,7 @@ const Order = () => {
 
 
 
-    // useEffect( () => {
-    //     const getOrders = async() => {
-    //         const url = `http://localhost:5000/order?email=${user.email}`;
-    //         try{
-    //             const {data} = await axios.get(url, {
-    //                 headers: {
-    //                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
-    //                 }
-    //             });
-    //             setOrders(data);
-    //         }catch(error){
-    //             console.log(error.message);
-    //             if(error.response.status === 401 || error.response.status === 403){
-    //                 signOut();
-    //                 navigate('/login');
-    //             }
-    //         }
-            
-    //         }
-    //         getOrders();
-            
-    // }, [user]);
+   
     const handleDelete = id => {
         const proceed = window.confirm('are u sure do u want to delete');
         if(proceed){
