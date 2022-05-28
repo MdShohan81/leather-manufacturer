@@ -82,8 +82,8 @@ const Order = ({_id}) => {
             <td>{order.email}</td>
             <td><button onClick={() => handleDelete(order._id)}><Button>Cancel</Button></button></td>
             <td>
-                {(order.price && !order.piad) && <Link to={`/dashboard/payment/${order._id}`}><Button>pay</Button></Link>}
-                {(order.price && order.piad) && <span className='text-green-500'>paid</span>}
+                {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><Button>pay</Button></Link>}
+                {(order.price && order.paid) && <span className='text-green-500'>paid</span>}
             </td>
           </tr>)
      }
