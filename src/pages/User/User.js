@@ -4,7 +4,7 @@ import Loading from '../Loading/Loading';
 import UserRow from './UserRow';
 
 const User = () => {
-    const {data: users, isLoading, refetch} = useQuery('users', () => fetch('http://localhost:5000/user',{
+    const {data: users, isLoading, refetch} = useQuery('users', () => fetch('https://arcane-wave-71042.herokuapp.com/user',{
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -23,8 +23,7 @@ const User = () => {
       <tr>
         <th>sl</th>
         <th>Email</th>
-        <th>Make</th>
-        <th>Favorite Color</th>
+        <th>Make Admin</th>
       </tr>
     </thead>
     <tbody>

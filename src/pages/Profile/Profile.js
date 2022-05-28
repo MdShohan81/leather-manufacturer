@@ -10,14 +10,14 @@ const Profile = () => {
     const { register, handleSubmit } = useForm();
 
     useEffect(() => {
-        fetch('http://localhost:5000/profile')
+        fetch('https://arcane-wave-71042.herokuapp.com/profile')
         .then(res => res.json())
         .then(data => setProfiles(data))
     }, []);
 
     const onSubmit = data => {
         console.log(data);
-        const url = `http://localhost:5000/profile`;
+        const url = `https://arcane-wave-71042.herokuapp.com/profile`;
         fetch(url, {
             method: 'POST',
             headers: {

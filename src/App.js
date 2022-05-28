@@ -19,6 +19,9 @@ import NotFound from './pages/NotFound/NotFound';
 import Blog from './pages/Blog/Blog';
 import Payment from './pages/Payment/Payment';
 import Footer from './pages/Footer/Footer';
+import ManageProduct from './pages/ManageProduct/ManageProduct';
+import ManageOrder from './pages/ManageOrder/ManageOrder';
+import Portfolio from './pages/Portfolio/Portfolio';
 
 
 function App() {
@@ -46,11 +49,15 @@ function App() {
           <Route path='review' element={<MyReview></MyReview>}></Route>
           <Route path='user' element={<RequireAdmin><User></User></RequireAdmin>}></Route>
           <Route path='addproduct' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
+          <Route path='manageproduct' element={<RequireAdmin><ManageProduct></ManageProduct></RequireAdmin>}></Route>
+          <Route path='manageorder' element={<RequireAdmin><ManageOrder></ManageOrder></RequireAdmin>}></Route>
+
           </Route>
             <Route path='login' element={<Login></Login>}></Route>
             <Route path='register' element={<Register></Register>}></Route>
             <Route path='*' element={<NotFound></NotFound>}></Route>
             <Route path='blog' element={<Blog></Blog>}></Route>
+            <Route path='portfolio' element={<Portfolio></Portfolio>}></Route>
         </Routes>
         </div>
           <Footer></Footer>

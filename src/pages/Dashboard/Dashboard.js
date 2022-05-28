@@ -10,16 +10,16 @@ const Dashboard = () => {
 
     return (
     <div>
-       <div class="drawer drawer-mobile">
-  <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-  <div class="drawer-content ">
+       <div className="drawer drawer-mobile">
+  <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+  <div className="drawer-content ">
         <Outlet></Outlet>
-    <label for="my-drawer-2" className="drawer-button  lg:hidden xl:hidden 2xl:hidden"></label>
+    
   
   </div> 
-  <div class="drawer-side">
-    <label for="my-drawer-2" class="drawer-overlay"></label> 
-    <ul class="menu p-4 overflow-y-auto w-80 bg-slate-800 text-white">
+  <div className="drawer-side">
+    <label for="my-drawer-2" className="drawer-overlay"></label> 
+    <ul className="menu p-4 overflow-y-auto w-80 bg-slate-800 text-white">
     <li><Link className='text-decoration-none' to='/dashboard'>My Profile</Link></li>
     {!admin 
     && 
@@ -29,9 +29,9 @@ const Dashboard = () => {
        </>}
       {admin && <>
         <li><Link className='text-decoration-none' to='/dashboard/user'>Make Admin</Link></li>
-        <li><Link className='text-decoration-none' to='/dashboard/manageorder'>Manage Order</Link></li>
         <li><Link className='text-decoration-none' to='/dashboard/addproduct'>Add Product</Link></li>
         <li><Link className='text-decoration-none' to='/dashboard/manageproduct'>Mange Product</Link></li>
+        <li><Link className='text-decoration-none' to='/dashboard/manageorder'>Manage Order</Link></li>
       </>}
     </ul>
   

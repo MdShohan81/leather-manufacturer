@@ -14,7 +14,7 @@ const CheckoutForm = ({placement}) => {
     const {_id,price, name , email} = placement;
 
     useEffect( () => {
-      fetch('http://localhost:5000/create-payment-intent', {
+      fetch('https://arcane-wave-71042.herokuapp.com/create-payment-intent', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
@@ -82,7 +82,7 @@ const CheckoutForm = ({placement}) => {
               placement: _id,
               transactionId: paymentIntent.id
             }
-            fetch(`http://localhost:5000/order/${_id}`, {
+            fetch(`https://arcane-wave-71042.herokuapp.com/order/${_id}`, {
               method: 'PATCH',
               headers: {
                 'content-type': 'application/json',

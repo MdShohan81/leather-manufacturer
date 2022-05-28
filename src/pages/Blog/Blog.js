@@ -6,30 +6,32 @@ const Blog = () => {
             <div className="row">
                 <h2 className='text-center mb-5 text-primary'>Blog/News</h2>
                 <div className="col-md-10 col-12 mx-auto text-center">
-                    <h4>1. Difference between javascript and nodejs?</h4>
-                    <p>Both of these are used for programming. But there is a significant difference between Node.JS and Javascript. JavaScript (abbreviated as JS) is a lightweight scripting language that is object-oriented. It is used for developing HTML pages that are dynamic and have various interactive effects on their web pages. The Node.JS, on the other hand, helps in representing a list of all the methods and objects that the JavaScript code can access when run via node interpreters or in the V8 engine.</p>
-                    <h5 className='text-info'>What is Node.JS?</h5>
-                    <p>It is a JS runtime environment that lets Javascript to be run on the server-side. It is cross-platform, and it thus allows the JS code to run outside any browser easily. There are various modules in NodeJS, and it is mainly utilised in the process of web development..</p>
+                    <h4>1. How will you improve the performance of a React Application?</h4>
+                    <p>BIn React, you can sort out about more than half of performance issues by analyzing how your components interacted in your app by using amazing tools such as React dev tools. But before you figure out the components behavior, make sure that you know how React works under the hood.</p>
+                    <p>the resources which are needed to be loaded first and lazyload the rest of code or resources with techniques such as code-splitting</p>
 
-                    <h5 className='text-info'>What is Javascript?</h5>
-                    <p>It is a scripting language, but JS is basically the ECMA script’s updated version. Javascript is mainly utilised in making the HTML web pages more dynamic and interactive</p>
-                    <p className='text-primary'>. It is a high-level language, and it makes use of the Oops concept. Yet, it is based primarily on the concept of prototype inheritance.</p>
                 </div>
                 <div className='col-md-10 col-12 mx-auto text-center'>
-                    <h4>2. When should you use nodejs and when should you use mongodb?</h4>
-                    <p>Node.js is an open source, cross-platform runtime environment for developing server-side and networking applications. Node.js applications are written in JavaScript, and can be run within the Node.js runtime on OS X, Microsoft Windows, and Linux.
-                    Node.js also provides a rich library of various JavaScript modules which simplifies the development of web applications using Node.js to a great extent</p>
+                    <h4>What are the different ways to manage a state in a React application?</h4>
+                    <p>React has an excellent tool for providing data across multiple components. The primary goal of Context is to avoid prop-drilling. Our goal is to get an easy-to-use tool to manage the state in various scenarios likely to be encountered in enterprise applications: frequent updates, redesigns, the introduction of new features, and so on.</p>
                     
-                    <p>databases like MongoDB are a good choice when your data is document-centric and doesn't fit well into the schema of a relational database, when you need to accommodate massive scale, when you are rapidly prototyping, and a few other use cases.
-                    Document databases are popular in ecommerce and securities trading platforms, among other uses, because they scale out well across multiple servers to support high data volumes and traffic.
+                    <p>While all this is theoretically doable with Context, it would require a custom solution that requires time to set up, support, and optimize. The only advantage of Context is that it doesn’t depend on a third-party library, but that can’t outweigh the effort to maintain this approach.
                     </p>
                 </div>
                 <div className='col-md-10 col-12 mx-auto text-center'>
-                    <h4>3.Differences between sql and nosql databases?</h4>
-                    <p>SQL programming can be effectively used to insert, search, update, delete database records.
-                    That doesn't mean SQL cannot do things beyond that. It can do a lot of things including, but not limited to, optimizing and maintenance of databases.</p>
-                    <p>NoSQL is a non-relational DMS, that does not require a fixed schema, avoids joins, and is easy to scale. NoSQL database is used for distributed data stores with humongous data storage needs. NoSQL is used for Big data and real-time web apps. For example companies like Twitter, Facebook, Google that collect terabytes of user data every single day.</p>
-                    <p>SQL databases are primarily called RDBMS or Relational Databases.NoSQL databases are primarily called as Non-relational or distributed database</p>
+                    <h4>3. How does prototypical inheritance work?</h4>
+                    <p>JavaScript is a prototype-based, Object Oriented programming language. After the ES6 updates, JavaScript allowed for “prototypal inheritance”, meaning that objects and methods can be shared, extended, and copied.
+                    Sharing amid objects makes for easy inheritance of structure (data fields), behavior (functions / methods), and state (data values).
+                    JavaScript is the most common of the prototype-capable languages, and its capabilities are relatively unique. When used appropriately, prototypical inheritance in JavaScript is a powerful tool that can save hours of coding.</p>
+                </div>
+                <div className='col-md-10 col-12 mx-auto text-center'>
+                    <h4>4.You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</h4>
+                    <p>For instance, do you want to get all items in an array that meet a specific condition? Do you want to check if any item meets the condition? Do you want to check if a specific value is in the array? Or do you want to find the index of the value in the array? hese methods are: Filter,Find,Includes,IndexOf</p>
+                </div>
+                <div className='col-md-10 col-12 mx-auto text-center'>
+                    <h4>5. What is a unit test? Why should write unit tests?</h4>
+                    <p>A unit test typically comprises of three stages: plan, cases and scripting and the unit test itself. In the first step, the unit test is prepared and reviewed. The next step is for the test cases and scripts to be made, then the code is tested.
+                    Test-driven development requires that developers first write failing unit tests. Then they write code and refactor the application until the test passes. TDD typically results in an explicit and predictable code base.Each test case is tested independently in an isolated environment, as to ensure a lack of dependencies in the code. The software developer should code criteria to verify each test case, and a testing framework can be used to report any failed tests. Developers should not make a test for every line of code, as this may take up too much time. Developers should then create tests focusing on code which could affect the behavior of the software being developed.</p>
                 </div>
             </div>
         </div>

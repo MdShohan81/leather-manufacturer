@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
-import './Tools.css'
+import './Tools.css';
 
 const Tools = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/product')
+        fetch('https://arcane-wave-71042.herokuapp.com/product')
         .then(res => res.json())
         .then(data => setProducts(data))
-    }, [])
+    }, []);
 
     return (
         <div className='container my-5'>

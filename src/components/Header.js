@@ -1,9 +1,6 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png';
 import { useAuthState } from 'react-firebase-hooks/auth';
-
 import { signOut } from 'firebase/auth'
 import auth from '../firebase.init';
 
@@ -16,37 +13,63 @@ const Header = () => {
     }
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-  <Container>
-  <Navbar.Brand as={Link} to='/' className='d-flex align-center justify-center'> <img src={logo} alt="img" className='text-white' style={{width: "60px", height: "50px"}}/></Navbar.Brand>
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <Navbar.Collapse id="responsive-navbar-nav">
-    <nav className='me-auto'>
-    <label tabindex="0" class="btn btn-ghost lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+      <div className="navbar bg-slate-900">
+      <div className="navbar-start">
+     <div className="dropdown">
+      <label tabindex="0" className="btn btn-danger lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
-      
-    </nav>
-    <Nav className="ms-auto">
-      <Nav.Link as={Link} to="/">Home</Nav.Link>
-      <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
-      {
-        user && <Nav.Link as={Link}  to="/dashboard">Dashboard</Nav.Link>
+      <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100  rounded-box w-52">
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/blog">Blog</Link></li>
+        <li><Link to="/portfolio">Portfolio</Link></li>
+       <li>
+       {
+        user && <Link  to="/dashboard">Dashboard</Link>
       }
-      {
+       </li>
+     <li>
+     {
         user ? 
           <>
           
-          <Nav.Link as={Link}  to="/signout" onClick={handleSignOut}>Sign Out</Nav.Link>
+          <Link to="/signout" onClick={handleSignOut}>Sign Out</Link>
           </>
         :
-        <Nav.Link as={Link} to='/login'>Login</Nav.Link>
+        <Link  to='/login'>Login</Link>
       }
-        
-    </Nav>
-  </Navbar.Collapse>
-  </Container>
-</Navbar>
+     </li>
+      </ul>
+    </div>
+    <Link to='/' className='text-decoration-none text-red-600 ms-4 text-bold text-2xl'>Leather</Link>
+  </div>
+  <div className="navbar-center hidden lg:flex">
+    <ul className="menu menu-horizontal text-white p-0">
+    <li><Link to="/">Home</Link></li>
+        <li><Link to="/blog">Blog</Link></li>
+        <li><Link to="/portfolio">Portfolio</Link></li>
+       <li>
+       {
+        user && <Link  to="/dashboard">Dashboard</Link>
+      }
+       </li>
+     <li>
+     {
+        user ? 
+          <>
+          
+          <Link to="/signout" onClick={handleSignOut}>Sign Out</Link>
+          </>
+        :
+        <Link  to='/login'>Login</Link>
+      }
+     </li>
+    </ul>
+  </div>
+  <div className="navbar-end">
+  <label for="my-drawer-2" className="btn text-light drawer-button  lg:hidden md:hidden">Dashboard</label>
+  </div>
+</div>
     </div>
   );
 };
