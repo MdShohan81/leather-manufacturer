@@ -30,7 +30,7 @@ const MyReview = () => {
             <input className='mb-3 border p-2' placeholder='Photo Url' type='url' {...register("picture")} />
             <input className='mb-3 border p-2' placeholder='Description' {...register("description")} />
             <input className='mb-3 border p-2' placeholder='Ratings' type="number" {...register("ratings")} />
-            <input className='btn btn-danger py-3 w-50 mx-auto' type="submit" value='Add Product' />
+            <input className='btn btn-danger py-3 w-50 mx-auto' type="submit" value='Add Review' />
             </form>
         </div>
     );
