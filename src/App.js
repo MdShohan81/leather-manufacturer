@@ -18,12 +18,14 @@ import AddProduct from './pages/AddProduct/AddProduct';
 import NotFound from './pages/NotFound/NotFound';
 import Blog from './pages/Blog/Blog';
 import Payment from './pages/Payment/Payment';
+import Footer from './pages/Footer/Footer';
 
 
 function App() {
   return (
     <div>
         <Header></Header>
+        <div className='app-css'>
         <Routes>
             <Route path='/' element={<Home></Home>}></Route>
             
@@ -50,6 +52,8 @@ function App() {
             <Route path='*' element={<NotFound></NotFound>}></Route>
             <Route path='blog' element={<Blog></Blog>}></Route>
         </Routes>
+        </div>
+          <Footer></Footer>
         <ToastContainer></ToastContainer>
     </div>
   );

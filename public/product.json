@@ -2,55 +2,23 @@
   {
     "_id": "628a467ad67bda081328f1fc",
     "picture": "https://manufacturer.stylemixthemes.com/leather/wp-content/uploads/sites/7/2018/08/photo-1479219136056-56bb6495a005-540x540.jpeg",
-    "price": 7885,
-    "minQty": 1,
-    "availableQty": 15,
-    "name": "May",
-    "description": "Cos Quilt Cover Set – Silver Blue"
+    "name": "Lori Rip",
+    "ratings": 5,
+    "description": "It never fails in helping reduce fine lines. Over the years I have found the reduction in the gel supplied."
   },
   {
     "_id": "628a467a8f515d44e995bfc3",
     "picture": "https://manufacturer.stylemixthemes.com/leather/wp-content/uploads/sites/7/2018/08/photo-1522139486522-c4186fea9b6e-540x540.jpeg",
-    "price": 1086,
-    "minQty": 1,
-    "availableQty": 10,
-    "name": "Palmer",
-    "description": "Cos Quilt Cover Set – Silver Blue"
+    "name": "Tuests nap",
+    "ratings": 5,
+    "description": "It never fails in helping reduce fine lines. Over the years I have found the reduction in the gel supplied."
   },
   {
     "_id": "628a467aab7459b37c30e605",
     "picture": "https://manufacturer.stylemixthemes.com/leather/wp-content/uploads/sites/7/2018/08/photo-1535120927584-0230f40fc1e2-540x540.jpeg",
-    "price": 6836,
-    "minQty": 1,
-    "availableQty": 100,
     "name": "Britt",
-    "description": "Cos Quilt Cover Set – Silver Blue"
-  },
-  {
-    "_id": "628a467a338b4bab429dcf23",
-    "picture": "https://manufacturer.stylemixthemes.com/leather/wp-content/uploads/sites/7/2018/08/photo-1524498250077-390f9e378fc0-540x540.jpeg",
-    "price": 1052,
-    "minQty": 1,
-    "availableQty": 30,
-    "name": "Grimes",
-    "description": "Cos Quilt Cover Set – Silver Blue"
-  },
-  {
-    "_id": "628a467a27fa8933f2839cb4",
-    "picture": "https://manufacturer.stylemixthemes.com/leather/wp-content/uploads/sites/7/2018/11/photo-1520946708818-4966701c25e6-540x540.jpeg",
-    "price": 6844,
-    "minQty": 1,
-    "availableQty": 40,
-    "name": "Lynette",
-    "description": "Cos Quilt Cover Set – Silver Blue"
-  },
-  {
-    "_id": "628a467a98b30b7a7a2bc8f4",
-    "picture": "https://manufacturer.stylemixthemes.com/leather/wp-content/uploads/sites/7/2018/11/photo-1473188588951-666fce8e7c68-540x540.jpeg",
-    "price": 5481,
-    "minQty": 1,
-    "availableQty": 50,
-    "name": "Gabrielle",
-    "description": "Cos Quilt Cover Set – Silver Blue"
+    "ratings": 5,
+    "description": "It never fails in helping reduce fine lines. Over the years I have found the reduction in the gel supplied "
   }
+  
 ]
