@@ -66,8 +66,8 @@ const Header = () => {
      </li>
     </ul>
   </div>
-  <div className="navbar-end">
-  <label for="my-drawer-2" className="btn text-light drawer-button  lg:hidden md:hidden">Dashboard</label>
+  <div className="navbar-end lg:hidden">
+  <label for="my-drawer-2" className="btn text-light drawer-button  lg:hidden xl:hidden">Dashboard</label>
   </div>
 </div>
     </div>
